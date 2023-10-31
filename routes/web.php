@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ChamadosController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,6 +17,14 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/chamados', [ChamadosController::class, 'index']);
+Route::get('/chamados/create', [ChamadosController::class, 'create']);
+Route::post('/chamados', [ChamadosController::class, 'store']);
+Route::get('/chamados/{id}', [ChamadosController::class, 'show']);
+Route::get('/chamados/edit/{id}', [ChamadosController::class, 'edit']);
+Route::put('/chamados/update/{id}', [ChamadosController::class, 'update']);
+Route::delete('/chamados/{id}', [ChamadosController::class, 'destroy']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
