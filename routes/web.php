@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ChamadosController;
+use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,6 +26,11 @@ Route::get('/chamados/{id}', [ChamadosController::class, 'show']);
 Route::get('/chamados/edit/{id}', [ChamadosController::class, 'edit']);
 Route::put('/chamados/update/{id}', [ChamadosController::class, 'update']);
 Route::delete('/chamados/{id}', [ChamadosController::class, 'destroy']);
+
+Route::get('/equipe', [UsersController::class, 'index']);
+Route::get('/equipe/edit/{id}', [UsersController::class, 'edit']);
+Route::post('/equipe/update/{id}', [UsersController::class, 'update']);
+Route::delete('/equipe/{id}', [UsersController::class, 'destroy']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
