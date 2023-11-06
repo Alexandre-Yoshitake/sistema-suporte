@@ -10,6 +10,7 @@
             <div class="card-header d-flex justify-content-between">
                 <p><b>{{ $chamado->titulo }}</b></p>
                 <p><b>Status:</b> {{ $chamado->status }}</p>
+                <p><b>Status:</b> {{ $chamado->created_at->format('d/m/Y') }}</p>
                 <div class="d-flex">
                     <a class="btn btn-info m-1" href="/chamados/{{ $chamado->id }}">Visualizar</a>
                     <a class="btn btn-warning m-1" href="/chamados/edit/{{ $chamado->id }}">Editar</a>
